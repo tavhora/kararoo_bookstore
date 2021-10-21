@@ -1,0 +1,9 @@
+{
+	"bookId":null,
+	"bookName":"NAME1",
+	"bookDescription":"DESC1",
+	"bookAuthor":"AUTHOR1",
+	"bookType":"FICTION",
+	"bookISBN":"ISBN1",
+	"bookPrice":100
+}
