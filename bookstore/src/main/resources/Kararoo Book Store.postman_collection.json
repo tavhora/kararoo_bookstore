@@ -1,0 +1,171 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Kararoo Book Store",
+		"_postman_id": "f6bd1f97-26b6-e1f4-62b8-d6e3716f8ff3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save New Book",
+			"request": {
+				"url": "localhost:8080/book-service/book",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"bookName\":\"NAME1\",\n\t\"bookDescription\":\"DESC1\",\n\t\"bookAuthor\":\"AUTHOR1\",\n\t\"bookType\":\"FICTION\",\n\t\"bookISBN\":\"ISBN1\",\n\t\"bookPrice\":100\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout Book_PromoCode_Applied",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/book-service/book/checkout?promoCode=SAVE50",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book-service",
+						"book",
+						"checkout"
+					],
+					"query": [
+						{
+							"key": "promoCode",
+							"value": "SAVE50",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t2\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout Book_Promocode_Not_Applied",
+			"request": {
+				"url": "localhost:8080/book-service/book/checkout",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t2\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"request": {
+				"url": "localhost:8080/book-service/book/3",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"bookName\":\"NAME3\",\n\t\"bookDescription\":\"DESC3\",\n\t\"bookAuthor\":\"AUTHOR3\",\n\t\"bookType\":\"COMIC\",\n\t\"bookISBN\":\"ISBN3\",\n\t\"bookPrice\":100\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book from Id",
+			"request": {
+				"url": "localhost:8080/book-service/book/3",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"bookName\":\"Second Book\",\n\t\"bookDescription\":\"Description Book\",\n\t\"bookAuthor\":\"AUTHER\",\n\t\"bookType\":\"COMIC\",\n\t\"bookISBN\":\"First ISBN\",\n\t\"bookPrice\":200\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Books",
+			"request": {
+				"url": "localhost:8080/book-service/book/list",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"bookName\":\"Second Book\",\n\t\"bookDescription\":\"Description Book\",\n\t\"bookAuthor\":\"AUTHER\",\n\t\"bookType\":\"COMIC\",\n\t\"bookISBN\":\"First ISBN\",\n\t\"bookPrice\":200\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"url": "localhost:8080/book-service/book/5",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
